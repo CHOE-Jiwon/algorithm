@@ -4,28 +4,17 @@
 import sys
 
 class MyClass():
-    InputString = None
-    InputList = None
     
     def __init__(self, InputString, InputList):
-        self.InputString = InputString
-        self.InputList = InputList
-    
-    def splitInput(self, one):
-        return one.split()
     
     def sol(self):
         
-
-        
-
-
 
 if __name__ == "__main__":
 
     InputString = sys.stdin.readline()
 
-    InputCnt = sys.stdin.readline()
+    InputCnt = int(sys.stdin.readline())
 
     InputList = [sys.stdin.readline().strip() for i in range(InputCnt)]
     
