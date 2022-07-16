@@ -3,20 +3,9 @@
 ##############################################
 import sys
 
-class MyClass():
-    
-    def __init__(self, InputString, InputList):
-    
-    def sol(self):
-        
 
-if __name__ == "__main__":
+InputString = sys.stdin.readline()
 
-    InputString = sys.stdin.readline()
+InputCnt = int(sys.stdin.readline())
 
-    InputCnt = int(sys.stdin.readline())
-
-    InputList = [sys.stdin.readline().strip() for i in range(InputCnt)]
-    
-    myClass = MyClass(InputString, InputList)
-    result = myClass.sol()
+InputList = [sys.stdin.readline().strip() for i in range(InputCnt)]
