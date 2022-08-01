@@ -27,4 +27,6 @@ for _ in range(testCnt):
             graphs[v].append(u)
     
     queue = deque()
+    colors = dict()
     for k, v in graphs.items():
+        
