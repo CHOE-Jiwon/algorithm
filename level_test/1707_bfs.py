@@ -14,23 +14,20 @@ sys.setrecursionlimit(10**6)
 
 testCnt = int(sys.stdin.readline())
 
-def dfs(u, color):
+def bfs(u, color):
+    queue = deque([u])
     colors[u] = color
 
-    for v in graphs[u]:
-        # u와 연결된 정점이 방문한 적이 없는 정점이라면
-        if not colors[v]:
-            tmp_result = dfs(v, -color)
+    while queue:
+        popped = queue.popleft()
 
-            # 재귀의 결과가 False라면.. 종료 조건
-            if not tmp_result:
+        for i in graphs[popped]:
+            if not colors[i]:
+                queue.append(i)
+                colors[i] = -1 * colors[popped]
+            elif colors[i] == colors[popped]:
                 return False
-        # 방문 한 정점인데 만약 u와 연결된 정점이 u와 컬러가 똑같다면.. 종료 조건
-        elif colors[v] == colors[u]:
-            return False
-        
-    # u와 연결된 정점을 다 돌았는데 아무런 문제가 없었다면
-    # 그 다음 처리해~
+
     return True
 
 
@@ -60,7 +57,7 @@ for _ in range(testCnt):
         if not colors[v]:
 
             # 방문하지 않은 정점에 대해서 color는 1로 설정.
-            result = dfs(v, 1)
+            result = bfs(v, 1)
 
             if not result:
                 break
