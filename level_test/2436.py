@@ -19,6 +19,7 @@ gcd, lcm = map(int, sys.stdin.readline().split())
 def factorize(n):
     factor = 2 #시작 소수 지정
     factors = []
+    
     while (factor**2 <= n):  # 에라토스테네스를 떠올리며,, 즉 루트n까지 실행
         while (n % factor == 0):  # 소수로 나누어 떨어지면(= 즉 약수면)
             factors.append(factor)  # 리스트에 추가
